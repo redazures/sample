@@ -1,12 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import LoginPage from './WebPages/LoginPage'
+import LoginPage from './pages/LoginPage'
 
 function App() {
   return (
     <div className="App">
-      <h1>Rappter Labs</h1>
-      <LoginPage/>
+      <div className="container">
+        <h1>Rappter Labs</h1>
+        <LoginPage/>
+      </div>
     </div>
   );
 }

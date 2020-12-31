@@ -10,8 +10,20 @@ const onSubmit = values => {
     })
 }
 
+const validate = values =>{
+  const errors = {}
+  if(!values.password){
+    errors.password = "Password is empty"
+  }else if (values.password.length<8){
+    errors.password='Password is too short'
+  }
+}
+
 const LoginPage = () => (
-    <Form onSubmit={onSubmit}>
+    <Form 
+      onSubmit={onSubmit}
+      validate={validate}
+    >
       {props => (
         <form onSubmit={props.handleSubmit}>
           <div>
@@ -29,7 +41,7 @@ const LoginPage = () => (
               name="password"
               component="input"
               type="text"
-              placeholder="password"
+              placeholder="Password"
             />
           </div>
           <button type="submit" classname={props.pristine ? "pristine" : "notPristine" } disabled={props.submitting}>Submit</button>

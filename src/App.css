@@ -1,7 +1,12 @@
-.App {
+#root {
+  background-color: green;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vw;
 }
 
+.App {
+  display: flex;
+  background-color: pink;
+}
