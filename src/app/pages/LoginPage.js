@@ -17,7 +17,7 @@ const validate = values =>{
   const errors = {}
 
   if(!values.email){
-    errors.email = "Email cannot be empty"
+    errors.email = "Email field cannot be empty"
   }else if (values.email.length>50){
     errors.email = "Email cannot be more than 50 characters"
   }else if (!emailRegex.test(values.email)){
@@ -25,7 +25,7 @@ const validate = values =>{
   }
 
   if(!values.password){
-    errors.password = "Password cannot be empty"
+    errors.password = "Password field cannot be empty"
   }else if (values.password.length < 4 || values.password.length>16){
     errors.password ='Password should be between 4 and 16 characters'
   }
@@ -39,9 +39,8 @@ const LoginPage = () => (
       validate={validate}
     >
       {props => (
-        <form onSubmit={props.handleSubmit}>
-          <div>
-          <Field name="email">
+        <form onSubmit={props.handleSubmit} className="loginform">
+          <Field name="email" className="fields">
               {({input, meta})=>{
                 return (
                   <div>
@@ -53,24 +52,21 @@ const LoginPage = () => (
                   </div>
                 )
               }}
-            </Field>
-          </div>
-          <div>
-            <Field name="password">
-              {({input, meta})=>{
-                return (
+          </Field>
+          <Field name="password" className="fields">
+            {({input, meta})=>{
+              return (
+                <div>
                   <div>
-                    <div>
-                    <label htmlFor="password">password</label><br/>
-                    <input {...input} type='text' placeholder="Password"></input>
-                    </div>
-                    <div>{meta.error && meta.touched && (<span className='errorMessage'>{meta.error}</span>)}</div>
+                  <label htmlFor="password">password</label><br/>
+                  <input {...input} type='text' placeholder="Password"></input>
                   </div>
-                )
-              }}
-            </Field>
-          </div>
-          <button type="submit" className={props.pristine ? "pristine" : "notPristine" } disabled={props.submitting}>Submit</button>
+                  <div>{meta.error && meta.touched && (<span className='errorMessage'>{meta.error}</span>)}</div>
+                </div>
+              )
+            }}
+          </Field>
+          <button type="submit" className={props.pristine ? "pristine" : "notPristine" } disabled={props.submitting}>Login</button>
         </form>
       )}
     </Form>

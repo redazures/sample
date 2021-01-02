@@ -3,9 +3,9 @@ import LoginPage from './app/pages/LoginPage'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <div className="container">
-        <h1>Rappter Labs</h1>
+        <h1 className='header'>Rappter Labs</h1>
         <LoginPage/>
       </div>
     </div>

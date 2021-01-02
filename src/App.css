@@ -16,9 +16,39 @@
   height: 100vh;
 }
 
-.App {
+.app {
   display: flex;
   background-color: pink;
   border-style:solid;
   border-color: black;
+}
+
+.header {
+  background-color:var(--secondary);
+  padding: 15px; 
+  margin: 15px;
+  border-style: solid;
+}
+
+Input {
+  width: 96%;
+}
+
+.loginform {
+  background-color: orange;
+  width: auto;
+}
+
+Button {
+  background-color: var(--primary);
+  width: 99.99%;
+  padding:7px;
+  color:var(--white);
+  font-weight: 900;
+  margin-top:20px;
+  margin-bottom: 5px;
+}
+
+.notPristine {
+  opacity: 0.5;
 }
