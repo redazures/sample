@@ -1,12 +1,4 @@
-
-:root {
-  --primary:blue;
-  --secondary:lightblue;
-  --danger:red;
-  --white:white;
-  --black:black;
-  --background:grey;
-}
+@import './app/config/Colors.css';
 
 #root {
   background-color:var(--background);
@@ -18,41 +10,5 @@
 
 .app {
   display: flex;
-  background-color: pink;
-  border-style:solid;
-  border-color: black;
 }
 
-.header {
-  background-color:var(--secondary);
-  padding: 15px; 
-  margin: 15px;
-  border-style: solid;
-}
-
-Input {
-  width: 97%;
-}
-
-.input{
-  width: 97%;
-}
-
-.loginform {
-  background-color: orange;
-  width: auto;
-}
-
-#loginButton {
-  background-color: var(--primary);
-  width: 99.99%;
-  padding:7px;
-  color:var(--white);
-  font-weight: 900;
-  margin-top:20px;
-  margin-bottom: 5px;
-}
-
-.notPristine {
-  opacity: 0.5;
-}

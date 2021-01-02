@@ -1,0 +1,33 @@
+@import '../config/Colors.css';
+  
+.formInputs {
+    background-color: var(--white);
+    border-style: solid;
+    margin-top: 2px;
+}
+
+.errorMessage{
+    color:var(--danger);
+    font-size: x-small;
+    font-weight: bold;
+    height: 15px;
+}
+
+#errorBorder {
+    border-color: var(--danger);
+}
+
+
+#loginButton {
+    background-color: var(--primary);
+    width: 100%;
+    padding:7px;
+    color:var(--white);
+    font-weight: 900;
+    margin-top:20px;
+    margin-bottom: 5px;
+}
+
+.notPristine {
+    opacity: 0.5;
+}

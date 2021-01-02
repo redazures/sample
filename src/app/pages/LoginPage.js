@@ -1,9 +1,10 @@
 import React from 'react'
 import { Form, Field } from 'react-final-form'
 import { InputAdornment, Input } from '@material-ui/core';
-import { Person } from '@material-ui/icons';
+import { Person, Lock } from '@material-ui/icons';
 
 import EmailValidate from '../auth/EmailValidate'
+import './LoginPage.css';
 
 const onSubmit = values => {
     return new Promise(resolve=>{
@@ -49,17 +50,21 @@ const LoginPage = () => (
                   <div>
                     <div>
                     <label htmlFor="Email">Email</label><br/>
+                    <div className="formInputs" id={meta.error && meta.touched ? "errorBorder" : null}>
                     <Input 
                       {...input}
                       type='text'
                       placeholder="user@rapptr.labs.com"
+                      fullWidth
+                      id="email"
                       startAdornment={
-                            <InputAdornment position="start">
-                              <Person/>
-                            </InputAdornment>
-                          }></Input>
+                        <InputAdornment position="start">
+                          <Person/>
+                        </InputAdornment>
+                      }/>
                     </div>
-                    <div>{meta.error && meta.touched && (<span className='errorMessage'>{meta.error}</span>)}</div>
+                    </div>
+                    <div className='errorMessage'>{meta.error && meta.touched && (<span className='errorMessage'>{meta.error}</span>)}</div>
                   </div>
                 )
               }}
@@ -69,15 +74,28 @@ const LoginPage = () => (
               return (
                 <div>
                   <div>
-                  <label htmlFor="password">password</label><br/>
-                  <input {...input} type='text' placeholder="Password"></input>
+                  <label htmlFor="password">Password</label><br/>
+                  <div className="formInputs" id={meta.error && meta.touched ? "errorBorder" : null}>
+                    <Input 
+                      {...input}
+                      type='text'
+                      placeholder="Password"
+                      fullWidth
+                      id="password"
+                      startAdornment={
+                        <InputAdornment position="start">
+                          <Lock/>
+                        </InputAdornment>
+                      }/>
+                    </div>
                   </div>
-                  <div>{meta.error && meta.touched && (<span className='errorMessage'>{meta.error}</span>)}</div>
+                  <div className='errorMessage'>{meta.error && meta.touched && (<span className='errorMessage'>{meta.error}</span>)}</div>
                 </div>
               )
             }}
           </Field>
-          <button type="submit" id="loginButton" className={props.pristine ? "pristine" : "notPristine" } disabled={props.submitting}>Login</button>  
+          <button type="submit" id="loginButton" className={props.pristine ? "pristine" : "notPristine" } disabled={props.submitting}>Login</button> 
+          <pre>{JSON.stringify(props.values,0,2)}</pre>
         </form>
       )}
     </Form>
