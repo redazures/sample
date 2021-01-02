@@ -1,0 +1,23 @@
+@import '../config/Colors.css';
+
+
+.input{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.addTodo {
+    border-style: solid;
+    border-color: var(--black);
+    margin:15px;
+    height: 30px;
+    width: 200px;
+}
+
+.saveButton {
+    background-color: var(--black);
+    height:30px;
+    margin:15px;
+    width: 60px;
+    color: var(--white);
+}

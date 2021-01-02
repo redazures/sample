@@ -1,7 +1,10 @@
-@import './app/config/Colors.css';
+@import '../config/Colors.css';
 
 .header {
     padding: 15px; 
     margin: 15px;
-    margin-bottom: 35px;
+    height: 40px;
+    white-space: nowrap;
+    text-align: center;
+    background-color: var(--secondary);
 }

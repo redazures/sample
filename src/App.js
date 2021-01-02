@@ -1,14 +1,13 @@
 import './App.css';
-import LoginPage from './app/pages/LoginPage'
+// import LoginPage from './app/pages/LoginPage.js'
+import ToDoPage from './app/pages/TodoPage.js'
+
 
 
 function App() {
   return (
-    <div className="app">
-      <div className="container">
-        <h1 className='header'>Rappter Labs</h1>
-        <LoginPage/>
-      </div>
+    <div className="app">        
+      <ToDoPage/>
     </div>
   );
 }

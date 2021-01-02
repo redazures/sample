@@ -1,0 +1,27 @@
+@import '../config/Colors.css';
+
+.todoContainer {
+    background-color:red;
+    border-radius: 10px;
+    height:80vh;
+    border-style: solid;
+    border-color: var(--black);
+    display: flex;
+    flex-direction: column;
+}
+
+.todoContainer:after{
+    vertical-align: bottom;
+}
+
+.list{
+    overflow-y: auto; 
+    height:calc(80vh - 60px);
+}
+
+.list:last-child{
+    border-bottom-left-radius: 5px;   
+    border-bottom-right-radius: 5px;   
+    border-bottom: steelblue;
+    vertical-align: bottom;
+}

@@ -10,5 +10,7 @@
 
 .app {
   display: flex;
+  width: 350px;
+  flex-direction: column;
 }
 
