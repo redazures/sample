@@ -1,12 +1,24 @@
+
+:root {
+  --primary:blue;
+  --secondary:lightblue;
+  --danger:red;
+  --white:white;
+  --black:black;
+  --background:grey;
+}
+
 #root {
-  background-color: green;
+  background-color:var(--background);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vw;
+  height: 100vh;
 }
 
 .App {
   display: flex;
   background-color: pink;
+  border-style:solid;
+  border-color: black;
 }
