@@ -31,7 +31,11 @@
 }
 
 Input {
-  width: 96%;
+  width: 97%;
+}
+
+.input{
+  width: 97%;
 }
 
 .loginform {
@@ -39,7 +43,7 @@ Input {
   width: auto;
 }
 
-Button {
+#loginButton {
   background-color: var(--primary);
   width: 99.99%;
   padding:7px;

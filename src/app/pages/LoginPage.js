@@ -1,5 +1,9 @@
 import React from 'react'
 import { Form, Field } from 'react-final-form'
+import { InputAdornment, Input } from '@material-ui/core';
+import { Person } from '@material-ui/icons';
+
+import EmailValidate from '../auth/EmailValidate'
 
 const onSubmit = values => {
     return new Promise(resolve=>{
@@ -10,7 +14,6 @@ const onSubmit = values => {
     })
 }
 
-const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
 
 const validate = values =>{
@@ -20,7 +23,7 @@ const validate = values =>{
     errors.email = "Email field cannot be empty"
   }else if (values.email.length>50){
     errors.email = "Email cannot be more than 50 characters"
-  }else if (!emailRegex.test(values.email)){
+  }else if (!EmailValidate.test(values.email)){
     errors.email = "Email is invalid."
   }
 
@@ -46,7 +49,15 @@ const LoginPage = () => (
                   <div>
                     <div>
                     <label htmlFor="Email">Email</label><br/>
-                    <input {...input} type='text' placeholder="user@rapptr.labs.com"></input>
+                    <Input 
+                      {...input}
+                      type='text'
+                      placeholder="user@rapptr.labs.com"
+                      startAdornment={
+                            <InputAdornment position="start">
+                              <Person/>
+                            </InputAdornment>
+                          }></Input>
                     </div>
                     <div>{meta.error && meta.touched && (<span className='errorMessage'>{meta.error}</span>)}</div>
                   </div>
@@ -66,7 +77,7 @@ const LoginPage = () => (
               )
             }}
           </Field>
-          <button type="submit" className={props.pristine ? "pristine" : "notPristine" } disabled={props.submitting}>Login</button>
+          <button type="submit" id="loginButton" className={props.pristine ? "pristine" : "notPristine" } disabled={props.submitting}>Login</button>  
         </form>
       )}
     </Form>
