@@ -12,3 +12,14 @@
 .activity{
     padding-left: 10px;
 }
+
+.logout {
+    background-color: var(--white);
+    height:30px;
+    margin:15px;
+    width: 60px;
+    color: var(--black);
+    position: fixed;
+    right:5px;
+    top: 5px;
+}

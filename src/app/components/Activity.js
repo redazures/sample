@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './NewActivity.css';
+import './Activity.css';
 
 const NewActvity =(props)=>(
     <div className='input'>

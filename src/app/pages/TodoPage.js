@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState, useContext} from 'react'
 
+import AuthContext from '../contexts/AuthContext.js'
 import Header from '../components/Header.js'
 import SearchBar from '../components/SearchBar.js'
 import TodoCard from '../components/TodoCard.js'
-import NewActvity from '../components/NewActivity.js'
+import Activity from '../components/Activity.js'
 
 import './TodoPage.css'
 const data = [
@@ -58,16 +59,20 @@ const TodoList = () => {
     }
 
     const deleteHandler = obj =>{
-        const newArr=todo.filter(el=>el!==obj)
+        const newArr=todo.filter(el=>el.key!==obj)
         setTodo(newArr)
     }
+
+    const { setUser } = useContext(AuthContext)
+
     return(
+        
         <>
             <Header>My To-Do List</Header>
             <div className='todoContainer'>
                 <SearchBar search={search} setSearch={setSearch} setShowAdd={setShowAdd}/>
                 {showAdd ? 
-                    <NewActvity addTodo={addTodo} 
+                    <Activity addo={addTodo} 
                         setAddTodo={setAddTodo} 
                         addTodoHandler={addTodoHandler}
                     />
@@ -78,6 +83,7 @@ const TodoList = () => {
                         {displayTodo()}
                     </div>
             </div>
+            <button type='button' className='logout' onClick={()=>setUser(false)}>Logout</button>
         </>
     )
 }

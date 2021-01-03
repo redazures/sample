@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{ useContext } from 'react'
 import { Form, Field } from 'react-final-form'
 import { InputAdornment, Input } from '@material-ui/core';
 import { Person, Lock } from '@material-ui/icons';
 
+import AuthContext from '../contexts/AuthContext.js'
 import EmailValidate from '../config/EmailValidate'
 import Header from '../components/Header.js'
 import './LoginPage.css';
@@ -36,7 +37,10 @@ const validate = values =>{
   return errors
 }
 
-const LoginPage = () => (
+const LoginPage = () => {
+  const { setUser } = useContext(AuthContext)
+  
+  return(
     <>
       <Header>Rappter Labs</Header>
       <Form 
@@ -95,12 +99,13 @@ const LoginPage = () => (
                 )
               }}
             </Field>
-            <button type="submit" id="loginButton" className={props.pristine ? "pristine" : "notPristine" } disabled={props.submitting}>Login</button> 
+            <button type="submit" id="loginButton" className={props.pristine ? "pristine" : "notPristine" } disabled={props.submitting} onClick={()=>setUser(true)}>Login</button> 
             <pre>{JSON.stringify(props.values,0,2)}</pre>
           </form>
         )}
       </Form>
     </>
-)
+  )
+}
 
 export default LoginPage

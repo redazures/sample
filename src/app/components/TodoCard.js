@@ -2,7 +2,7 @@ import React,{ useState } from 'react'
 import { Create, Delete } from '@material-ui/icons';
 import { IconButton } from '@material-ui/core';
 
-import NewActivity from './NewActivity.js'
+import Activity from './Activity.js'
 import './TodoCard.css';
 
 const TodoCard = (props) => {
@@ -12,7 +12,7 @@ const TodoCard = (props) => {
     return(
         <>
         {selected ? 
-            <NewActivity 
+            <Activity 
                 currentId={currentId}
                 current={el}
                 addTodo={addTodo} 
@@ -31,7 +31,7 @@ const TodoCard = (props) => {
                         <Create/>
                     </IconButton>
                     <IconButton
-                        onClick={()=>deleteHandler(el)}
+                        onClick={()=>deleteHandler(currentId)}
                     >
                         <Delete/>
                     </IconButton>
