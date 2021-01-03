@@ -1,0 +1,27 @@
+@import '../config/Colors.css';
+
+.inputSearch{
+    display: flex;
+    justify-content: space-around;
+    background-color: teal;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height:65px;
+}
+
+.searchInput {
+    border-style: solid;
+    border-color: var(--black);
+    margin:15px;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.searchButton {
+    background-color: var(--primary);
+    height:30px;
+    margin:15px;
+    width: 60px;
+    color: var(--black);
+}

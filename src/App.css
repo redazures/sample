@@ -1,12 +1,4 @@
-
-:root {
-  --primary:blue;
-  --secondary:lightblue;
-  --danger:red;
-  --white:white;
-  --black:black;
-  --background:grey;
-}
+@import './app/config/Colors.css';
 
 #root {
   background-color:var(--background);
@@ -16,9 +8,9 @@
   height: 100vh;
 }
 
-.App {
+.app {
   display: flex;
-  background-color: pink;
-  border-style:solid;
-  border-color: black;
+  width: 350px;
+  flex-direction: column;
 }
+
